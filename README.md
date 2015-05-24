@@ -60,5 +60,4 @@ To run the application:
 
 python project.py
 
-This will start both the Flask app and the client. Then go to the http://localhost:5000/project_admin/UI.html and you can start using the application. 
-
+This will start both the Flask app and the client. Then go to the http://localhost:5000/project_admin/UI.html and you can start using the application.
