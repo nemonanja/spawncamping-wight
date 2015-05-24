@@ -1,0 +1,28 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS USERS(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	nickname TEXT NOT NULL UNIQUE,
+	email TEXT NOT NULL,
+	role TEXT CHECK(ROLE = "member" or  ROLE = "leader"),
+	boss INTEGER DEFAULT NULL,
+	FOREIGN KEY(boss) REFERENCES USERS(id));
+CREATE TABLE IF NOT EXISTS TASKS(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	title TEXT NOT NULL,
+	category TEXT CHECK(category = "frontend" or category = "backend" or category = "UX" or category = "bug"),
+	description TEXT,
+	priority INTEGER CHECK(priority = 1 or priority = 2 or priority = 3 or priority = 4),
+	status INTEGER CHECK(status = 1 or status = 2 or status = 3 or status = 4),
+	created_date DATETIME DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS ASSIGNED_TO(
+	user_id INTEGER REFERENCES USERS(id) ON DELETE CASCADE,
+	task_id INTEGER REFERENCES TASKS(id) ON DELETE CASCADE);
+CREATE TABLE IF NOT EXISTS COMMENTS(
+	comment_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	comment TEXT NOT NULL,
+	task_id INTEGER REFERENCES TASKS(id) ON DELETE CASCADE,
+	commented_date DATETIME DEFAULT CURRENT_TIMESTAMP);
+
+COMMIT;
+PRAGMA foreign_keys=ON;
