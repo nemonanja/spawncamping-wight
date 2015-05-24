@@ -11,16 +11,18 @@
 - database_api_tests_user.py is a test module for testin user cases in database.py
 
 //project_admin/:
--application.py is an set up file
+- application.py is an set up file
 
 //project_admin/static/:
--contains files required for Bootstrap
--project_client.js contains the code for the web client
--UI.html contais the UI that is used by project_client.js
+- contains files required for Bootstrap
+- project_client.js contains the code for the web client
+- UI.html contais the UI that is used by project_client.js
 
 ***DELIVERABLE 2 (DB API)***
 
-To init the database, go to the root directory (project) in console and type:
+To init the database:
+
+- Go to the root directory (project) in console and type:
 
 python
 db_path = 'db/project.db'
@@ -37,17 +39,26 @@ python -m db_test.database_api_tests_task
 
 ***DELIVERABLE 3 (REST API)***
 
-To run application go to the root directory (project) in console and type:
+To run application:
+
+- Go to the root directory (project) in console and type:
 
 python -m db_api.resources
 
 ***DELIVERABLE 4***
 
-To run the test for the RESTful API go to the //project_work/db_api/ and in console run the rest_api_test.py. 
+To run the test for the RESTful API:
+
+- Go to the //project_work/db_api/ and in console run the rest_api_test.py. 
 
 
 ***FINAL DELIVERABLE***
 
-To run the application go to the root directory (project_work) in console and type: python project.py
+To run the application:
+
+- Go to the root directory (project_work) in console and type:
+
+python project.py
+
 This will start both the Flask app and the client. Then go to the http://localhost:5000/project_admin/UI.html and you can start using the application. 
 
