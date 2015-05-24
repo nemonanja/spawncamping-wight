@@ -1,2 +1,1 @@
 # spawncamping-wight
-efs
